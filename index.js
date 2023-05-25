@@ -13,3 +13,11 @@ app.get('*', (req, res) => {
 })
 
 app.listen(process.env.PORT)
+
+const testRouter = require('express').Router()
+
+testRouter.get('/test', (req, res) => {
+    res.send('Test route')
+})
+
+app.use(testRouter)
